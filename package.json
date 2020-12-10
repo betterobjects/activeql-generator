@@ -1,0 +1,24 @@
+{
+  "name": "activeql-starter",
+  "description": "the ActiveQL starter app, to quickstart developing ActiveQL",
+  "keywords": [
+    "graphql",
+    "GraphQL",
+    "API",
+    "GraphQL on rails",
+    "Simple GraphQL",
+    "GraphQL Start",
+    "GraphQL Easy"
+  ],
+  "homepage": "https://github.com/betterobjects/activeql",
+  "version": "0.0.1",
+  "license": "MIT",
+  "author": {
+    "name": "Thomas Rekittke",
+    "email": "betterobjects@mac.com",
+    "url": "https://betterobjects.github.io"
+  },
+	"bin": {
+		"activeql": "./bin/activeql-cli.js"
+	}
+}
