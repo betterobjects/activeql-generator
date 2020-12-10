@@ -1,0 +1,4 @@
+entity:
+  Car:
+    attributes:
+      brand: String!
