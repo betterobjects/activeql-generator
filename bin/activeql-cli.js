@@ -1,5 +1,6 @@
 #!/usr/bin/env node
 
+var copy = require('recursive-copy');
 var ejs = require('ejs')
 var fs = require('fs')
 var minimatch = require('minimatch')
@@ -123,9 +124,14 @@ function copyTemplateMulti (fromDir, toDir, nameGlob) {
  */
 
 function createApplication (name, dir) {
-  console.log('Build express')
-  createExpressApplication( name, dir );
-  console.log('Done')
+  var src = path.join(__dirname, '..', 'starter-template');
+  copy(src, dir, function(error, results) {
+    if (error) {
+        console.error('Copy failed: ' + error);
+    } else {
+        console.info('Created ' + results.length + ' files');
+    }
+  });
 }
 
 function createExpressApplication (name, dir) {
