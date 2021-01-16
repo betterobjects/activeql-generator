@@ -6,14 +6,14 @@
     "clean": "rimraf dist",
     "build": "rimraf dist && tsc",
     "watch:build": "tsc --watch",
-    "start": "concurrently -n express,angular \"npm:server:dev\" \"cd ../angular; ng serve\"",
+    "start": "concurrently -n express,angular \"npm:server\" \"cd ../angular; ng serve\"",
     "server": "./node_modules/.bin/ts-node-dev -P ./tsconfig.json --no-notify --inspect --watch ./activeql -- ./app.ts",
     "server:prod": "./node_modules/.bin/ts-node -P ./tsconfig.json -- ./app.ts",
     "seed": "./node_modules/.bin/ts-node -P ./tsconfig.json -- ./activeql/seed.ts",
     "test": "jest --watch --detectOpenHandles"
   },
   "dependencies": {
-    "activeql-server": "^1.0.12",
+    "activeql-server": "^1.0.13",
     "apollo-server-express": "^2.9.3",
     "bcryptjs": "^2.4.3",
     "compression": "^1.7.4",

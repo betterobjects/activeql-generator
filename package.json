@@ -1,6 +1,6 @@
 {
   "name": "activeql",
-  "description": "the ActiveQL starter app, to quickstart developing ActiveQL",
+  "description": "ActiveQL generator app",
   "keywords": [
     "graphql",
     "GraphQL",
@@ -23,11 +23,7 @@
   },
   "dependencies": {
     "commander": "2.15.1",
-    "ejs": "2.6.1",
-    "minimatch": "3.0.4",
-    "mkdirp": "0.5.1",
-    "recursive-copy": "^2.0.11",
-    "sorted-object": "2.0.1"
+    "recursive-copy": "^2.0.11"
   },
   "main": "bin/express-cli.js",
   "preferGlobal": true
