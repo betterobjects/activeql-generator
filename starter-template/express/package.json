@@ -13,7 +13,7 @@
     "test": "jest --watch --detectOpenHandles"
   },
   "dependencies": {
-    "activeql-server": "^1.0.13",
+    "activeql-server": "^1.0.14",
     "apollo-server-express": "^2.9.3",
     "bcryptjs": "^2.4.3",
     "compression": "^1.7.4",
