@@ -9,7 +9,7 @@ entity:
   Car:
     attributes:
       licence: Key
-      brand: String!
+      brand: CarBrand!
       color: String
       mileage: Int
     seeds:
