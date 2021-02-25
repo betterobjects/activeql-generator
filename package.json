@@ -18,9 +18,13 @@
     "email": "betterobjects@mac.com",
     "url": "https://betterobjects.github.io"
   },
+  "bin": {
+    "activeql": "./bin/activeql-cli.js"
+  },
   "dependencies": {
     "commander": "2.15.1",
     "recursive-copy": "^2.0.11"
   },
+  "main": "bin/express-cli.js",
   "preferGlobal": true
 }
