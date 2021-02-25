@@ -78,7 +78,7 @@ entity:
 			registration: Date
 ```
 
-After starting the GraphQL API Express Server point your browser to [http://localhost:3000/graphql](http://localhost:3000/graphql) and you should see a running fully fledged GraphQL API with 
+After starting the GraphQL API Express Server point your browser to [http://localhost:4000/graphql](http://localhost:4000/graphql) and you should see a running fully fledged GraphQL API with 
 
 * schema types
 * type, types and statistics queries 
