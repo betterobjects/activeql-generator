@@ -5,8 +5,10 @@ var fs = require('fs')
 var path = require('path')
 var program = require('commander')
 var readline = require('readline')
+var execSync = require('child_process').execSync, child;
 
-var VERSION = require('../package').version
+var VERSION = require('../package').version;
+const { NOTIMP } = require('dns');
 
 var _exit = process.exit
 
@@ -103,7 +105,8 @@ function createApplication (name, dir) {
     if (error) {
         console.error('Copy failed: ' + error);
     } else {
-        console.info('Created ' + results.length + ' files');
+      console.info('Created ' + results.length + ' files');
+      npmInstall( dir );
     }
   });
 }
@@ -171,6 +174,23 @@ function launchedFromCmd () {
     process.env._ === undefined
 }
 
+function npmInstall( destination ){
+  console.log( `npm install ./${destination}/express\nthis may take a while ...` );
+  child = execSync('npm --prefix ./' + destination + '/express install', function (error, stdout, stderr) {
+    console.log( stdout );
+    console.warn( stderr );
+    if (error !== null) console.error( error );    
+  });
+
+  console.log( `npm install ./${destination}/angular\nthis may take a while ...` );
+  child = execSync('npm --prefix ./' + destination + '/angular install', function (error, stdout, stderr) {
+    console.log( stdout );
+    console.warn( stderr );
+    if (error !== null) console.error( error );    
+  });
+
+  console.info( `\nTo start simply \ncd ./${destination}express\nnpm run start\n\nGrapQL API will run at localhost:4000 and Admin UI at localhost:4200\nEnjoy!`);
+}
 
 /**
  * Main program.
@@ -190,7 +210,7 @@ function main () {
     } else {
       confirm('destination is not empty, continue? [y/N] ', function (ok) {
         if (ok) {
-          process.stdin.destroy()
+          process.stdin.destroy()          
           createApplication(appName, destinationPath)
         } else {
           console.error('aborting')
